@@ -40,4 +40,5 @@ def delete_tpUsuario(conexion,id):
     micursor.execute(sentencia)
     database.commit()
     print('El registro ha sido eliminado corretamente')
-delete_tpUsuario(database,2)
+#Ejemplo
+#delete_tpUsuario(database,2)
