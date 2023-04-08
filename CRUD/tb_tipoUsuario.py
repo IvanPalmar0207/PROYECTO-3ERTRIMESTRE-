@@ -1,7 +1,7 @@
 import sqlite3
 with sqlite3.connect('CRUD/BD_PROYECTO.db') as database:
     micursor=database.cursor()
-    sentencia=''
+
 def insertar_TpUsuario(conexion,c1,dato1):
     micursor=conexion.cursor()
     sentenciainsert=f'INSERT INTO tb_tipoUsuario ({c1}) VALUES ("{dato1}")'
