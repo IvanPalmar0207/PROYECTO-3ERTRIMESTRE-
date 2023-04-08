@@ -36,4 +36,4 @@ def eliminarFactura(conexion,d1):
     micursor.execute(sentencia)
     conexion.commit()
     print('El registro ha sido eliminado corretamente')
-eliminarFactura(proyecto,11)
+#eliminarFactura(proyecto,11)
