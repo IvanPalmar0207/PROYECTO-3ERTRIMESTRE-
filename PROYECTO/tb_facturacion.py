@@ -1,10 +1,10 @@
 import sqlite3
-with sqlite3.connect('CRUD/BD_PROYECTO.db') as proyecto:
+with sqlite3.connect('PROYECTO/BD_PROYECTO.db') as proyecto:
     micursor=proyecto.cursor()
     
-def insertar_factura(conexion,c1,c2,c3,d1,d2,d3):
+def insertar_factura(conexion,d1,d2,d3):
     micursor=conexion.cursor()
-    sentencia=f'INSERT INTO tb_facturacion ({c1},{c2},{c3}) VALUES ("{d1}","{d2}","{d3}")'
+    sentencia=f'INSERT INTO tb_facturacion (Fecha_fac,Id_usu,ValorTotal_fac) VALUES ("{d1}","{d2}","{d3}")'
     micursor.execute(sentencia)
     conexion.commit()
     print('La insercion del dato fue creado')

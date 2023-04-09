@@ -1,12 +1,12 @@
 import sqlite3
-with sqlite3.connect('CRUD/BD_PROYECTO.db') as database:
-    micursor=database.cursor()
+with sqlite3.connect('PROYECTO/BD_PROYECTO.db') as proyecto:
+    micursor=proyecto.cursor()
 
 def insertar_TpUsuario(conexion,c1,dato1):
     micursor=conexion.cursor()
     sentenciainsert=f'INSERT INTO tb_tipoUsuario ({c1}) VALUES ("{dato1}")'
     micursor.execute(sentenciainsert)
-    database.commit()
+    proyecto.commit()
     print('La insercion del dato fue creado')
 #Ejemplo
 #insertar_TpUsuario(database,'Tipo_TpU','Prueba-ADSO')
@@ -29,7 +29,7 @@ def updateId_tpUsuario(conexion,nombre,id):
     micursor=conexion.cursor()
     sentencia=f'UPDATE tb_tipoUsuario SET Tipo_TpU="{nombre}" WHERE Id_TpU="{id}"'
     micursor.execute(sentencia)
-    database.commit()
+    proyecto.commit()
     print('El registro fue actualizado correctamente')
 #Ejemplo
 #updateId_tpUsuario(database,'Saiyajin',2)
@@ -38,7 +38,7 @@ def delete_tpUsuario(conexion,id):
     micursor=conexion.cursor()
     sentencia=f'DELETE FROM tb_tipoUsuario WHERE Id_TpU="{id}"'
     micursor.execute(sentencia)
-    database.commit()
+    proyecto.commit()
     print('El registro ha sido eliminado corretamente')
 #Ejemplo
 #delete_tpUsuario(database,2)
